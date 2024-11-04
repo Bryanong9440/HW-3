@@ -68,9 +68,9 @@ int main()
         print_board(board);
         //Getting and entering user input
         printf("Please enter a move: ");
-        int row;
-        int column;
-        scanf("%i,%i", &row, &column);
+        char row;
+        char column;
+        scanf("%c,%c", &row, &column);
         //Making rows and columns align with array
         row --;
         column --;
@@ -92,3 +92,4 @@ int main()
         turn *= -1;
     }
     return 0;
+}
