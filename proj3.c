@@ -63,6 +63,7 @@ int main()
     //Creating an empty board
     int board[3][3] = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
     int turn = 1;
+    int draw_check;
     //Loop of turns
     while (1){
         print_board(board);
@@ -70,6 +71,7 @@ int main()
         printf("Please enter a move: ");
         int row;
         int column;
+        scanf("%i,%i", &row, &column);
         //Making rows and columns align with array
         row --;
         column --;
@@ -77,8 +79,6 @@ int main()
         if(move(board, turn, row, column) == -1){
             printf("Invalid input.\n");
             continue;
-        }else{
-            scanf("%i,%i", &row, &column);
         }
         //Checking if anyone won
         int result = has_won(board);
@@ -91,6 +91,10 @@ int main()
         }
         //Switching turns
         turn *= -1;
+        draw_check ++;
+        if(draw_check = 9){
+            printf("It's a draw");
+        }
     }
     return 0;
 }
