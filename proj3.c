@@ -65,7 +65,7 @@ int main()
     int turn = 1;
     int draw_check = 0;
     //Loop of turns
-    while (1){
+    for(int i = 1; i < 50; i++){
         print_board(board);
         //Getting and entering user input
         printf("Please enter a move: ");
