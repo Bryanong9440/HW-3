@@ -93,9 +93,11 @@ int main()
         }
         //Switching turns
         turn *= -1;
+        //Draw check
         draw_check ++;
         if(draw_check == 9){
             printf("It's a draw");
+            print_board(board)
             break;
         }
     }
