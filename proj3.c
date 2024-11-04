@@ -97,7 +97,7 @@ int main()
         draw_check ++;
         if(draw_check == 9){
             printf("It's a draw");
-            print_board(board)
+            print_board(board);
             break;
         }
     }
