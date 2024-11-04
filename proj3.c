@@ -68,9 +68,8 @@ int main()
         print_board(board);
         //Getting and entering user input
         printf("Please enter a move: ");
-        char row;
-        char column;
-        scanf("%c,%c", &row, &column);
+        int row;
+        int column;
         //Making rows and columns align with array
         row --;
         column --;
@@ -78,6 +77,8 @@ int main()
         if(move(board, turn, row, column) == -1){
             printf("Invalid input.\n");
             continue;
+        }else{
+            scanf("%i,%i", &row, &column);
         }
         //Checking if anyone won
         int result = has_won(board);
