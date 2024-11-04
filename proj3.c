@@ -63,7 +63,7 @@ int main()
     //Creating an empty board
     int board[3][3] = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
     int turn = 1;
-    int draw_check;
+    int draw_check = 0;
     //Loop of turns
     while (1){
         print_board(board);
@@ -83,17 +83,20 @@ int main()
         //Checking if anyone won
         int result = has_won(board);
         if(result == 1){
+            print_board(board);
             printf("X has won.");
             break;
         }else if(result == -1){
+            print_board(board);
             printf("Y has won.");
             break;
         }
         //Switching turns
         turn *= -1;
         draw_check ++;
-        if(draw_check = 9){
+        if(draw_check == 9){
             printf("It's a draw");
+            break;
         }
     }
     return 0;
