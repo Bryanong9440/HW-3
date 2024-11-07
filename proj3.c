@@ -61,6 +61,7 @@ void print_board(int board[][3]) {
 int main()
 {
     printf("Welcome!\n");
+    printf(">>> ");
     //Creating an empty board
     int board[3][3] = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
     int turn = 1;
@@ -72,10 +73,12 @@ int main()
         printf("Please enter a move: ");
         char input_string[100];
         scanf("%s", &input_string);
+        //Check if the user wants to quit
         if(input_string[0] == 'q' && input_string[1] == '\0'){
             printf("You have terminated the game");
             break;
         }
+        //Check for validity
         if(input_string[1] != ',' || strlen(input_string) != 3){
             printf("Invalid input.\n");
             while (getchar() != '\n'); 
@@ -83,6 +86,7 @@ int main()
         }
         int row;
         int column;
+        //Getting the numbers for rows and columns
         row = input_string[0] - 48;
         column = input_string[2] - 48;
         //Making rows and columns align with array
@@ -111,7 +115,6 @@ int main()
         draw_check ++;
         if(draw_check == 9){
             printf("It's a draw\n");
-            print_board(board);
             break;
         }
     }
