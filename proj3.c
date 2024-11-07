@@ -89,7 +89,7 @@ int main()
             break;
         }else if(result == -1){
             print_board(board);
-            printf("Y has won.");
+            printf("O has won.");
             break;
         }
         //Switching turns
