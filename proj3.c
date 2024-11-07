@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 //checking if someone has won
 int has_won(int board[][3]){
     for(int i = 0; i < 3; i++){
@@ -69,14 +70,26 @@ int main()
         print_board(board);
         //Getting and entering user input
         printf("Please enter a move: ");
+        char input_string[100];
+        scanf("%s", &input_string);
+        if(input_string[0] == 'q' && input_string[1] == '\0'){
+            printf("You have terminated the game");
+            break;
+        }
+        if(input_string[1] != ',' || strlen(input_string) != 3){
+            printf("Invalid input.\n");
+            while (getchar() != '\n'); 
+            continue;
+        }
         int row;
         int column;
-        scanf("%i,%i", &row, &column);
+        row = input_string[0] - 48;
+        column = input_string[2] - 48;
         //Making rows and columns align with array
         row --;
         column --;
         //Checking validity
-        if(move(board, turn, row, column) == -1){
+         if(move(board, turn, row, column) == -1){
             printf("Invalid input.\n");
             while (getchar() != '\n'); 
             continue;
