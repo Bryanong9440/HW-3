@@ -103,11 +103,11 @@ int main()
         int result = has_won(board);
         if(result == 1){
             print_board(board);
-            printf("X has won.");
+            printf("X has won.\n");
             break;
         }else if(result == -1){
             print_board(board);
-            printf("O has won.");
+            printf("O has won.\n");
             break;
         }
         //Switching turns
