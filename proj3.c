@@ -63,6 +63,7 @@ int main()
     printf("Welcome!\n");
     //Creating an empty board
     int board[3][3] = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
+    print_board(board);
     int turn = 1;
     int draw_check = 0;
     //Loop of turns
