@@ -69,7 +69,7 @@ int main()
     //Loop of turns
     for(int i = 1; i < 50; i++){
         //Getting and entering user input
-        printf("Please enter a move: \n");
+        printf("Please enter a move:\n");
         char input_string[100];
         scanf("%s", &input_string);
         //Check if the user wants to quit
